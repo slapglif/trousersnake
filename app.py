@@ -1,4 +1,6 @@
 from flask import Flask, jsonify
+from flask_swagger import swagger
+
 import json
 app = Flask(__name__)
 
@@ -7,6 +9,11 @@ app = Flask(__name__)
 def discharge():
     with open('payload.json') as f:
         return jsonify(json.loads(f.read()))
+
+
+@app.route("/spec")
+def spec():
+    return jsonify(swagger(app))
 
 
 if __name__ == '__main__':
