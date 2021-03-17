@@ -15,7 +15,7 @@ def discharge():
 def index():
     with open('symptomgroups.json', encoding='latin-1') as f:
         fixed_text = fix_text(f.read())
-        return jsonify(json.loads(fixed_text))
+        return jsonify(fixed_text)
 
 
 if __name__ == '__main__':
