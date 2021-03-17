@@ -12,8 +12,8 @@ def discharge():
 
 @app.route('/api/symptomgroups')
 def index():
-    with open('symptomgroups.json', encoding='latin-1') as f:
-        return jsonify(json.loads(f.read()))
+    with open('symptomgroups.json') as f:
+        return jsonify(json.loads(f.read(), encoding='latin-1'))
 
 
 
