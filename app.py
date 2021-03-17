@@ -11,6 +11,12 @@ def discharge():
         return jsonify(json.loads(f.read()))
 
 
+@app.route('/api/symptomgroups')
+def discharge():
+    with open('symptomgroups.json') as f:
+        return jsonify(json.loads(f.read()))
+
+
 @app.route("/spec")
 def spec():
     return jsonify(swagger(app))
